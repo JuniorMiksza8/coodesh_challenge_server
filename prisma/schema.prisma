@@ -9,3 +9,13 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Cases {
+  id                  Int      @unique @default(autoincrement())
+  location            String
+  date                DateTime
+  variant             String
+  num_sequences       Float
+  perc_sequences      Float
+  num_sequences_total Float
+}
